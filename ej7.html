@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+<body>
+    <h1>Ejercicio 7</h1>
+    <form>
+        <label for="">Ingrese la primer nota:</label>
+        <input type="number" name="nota1" id="nota1"><br>
+        <label for="">Ingrese el valor ponderado de la primer nota:</label>
+        <input type="number" name="valor1" id="valor1"><br><br>
+        <label for="">Ingrese la segunda nota:</label>
+        <input type="number" name="nota2" id="nota2"><br>
+        <label for="">Ingrese el valor ponderado de la segunda nota:</label>
+        <input type="number" name="valor2" id="valor2"><br><br>
+        
+        
+        <button onclick="calcular()">Enviar</button>
+    </form>    
+
+    <script>
+        
+        function calcular(){
+            let nota1= parseInt(document.getElementById("nota1").value);
+            let nota2= parseInt(document.getElementById("nota2").value);
+            let valor1= parseInt(document.getElementById("valor1").value);
+            let valor2= parseInt(document.getElementById("valor2").value);
+            let pndrcn1;
+            let pre_total1;
+            let pndrcn2;
+            let pre_total2;
+            let total_notas;
+            let total_valor;
+            let media;
+
+            pndrcn1=valor1/100;
+            pre_total1=nota1*pndrcn1;    
+
+            pndrcn2=valor2/100;
+            pre_total2=nota2*pndrcn2; 
+
+            total_valor=valor1+valor2;
+            total_notas= nota1+nota2;
+            media= pre_total1+pre_total2;
+
+
+            document.write(`<h1>Calificación del Alumno</h1>
+                        Nota 1: ${nota1}<br>
+                        Ponderación: ${valor1}%<br>
+                        Nota 1 ponderada: ${pre_total1}<br><br>
+
+                        Nota 2: ${nota2}<br>
+                        Ponderación: ${valor2}%<br>
+                        Nota 2 ponderada: ${pre_total2}<br><br>
+
+                        total ponderacion: ${total_valor}%<br>
+                        total notas: ${total_notas}<br>
+                        Media: ${media}`);   
+                        
+            
+        }
+        </script>
+</body>
+</html>

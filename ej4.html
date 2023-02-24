@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <h1>Ejercicio 4</h1>
+    <form>
+        <label for="">Ingrese el primer número:</label><br>
+        <input type="number" name="num1" id="num1"><br><br>
+        <label for="">Ingrese el segundo número:</label><br>
+        <input type="number" name="num2" id="num2"><br><br>
+        
+        <button onclick="calcular()">Enviar</button>
+    </form>    
+
+    <script>
+        
+        function calcular(){
+            let num1= document.getElementById("num1").value;
+            let num2= document.getElementById("num2").value;           
+            let resultado;
+            if (num1>num2) {
+                document.write(`el numero: ${num1} es mayor que el numero: ${num2}`);
+            } else {
+                document.write(`el numero: ${num2} es mayor que el numero: ${num1}`);
+            }
+                        
+        }
+        
+    </script>
+</body>
+</html>

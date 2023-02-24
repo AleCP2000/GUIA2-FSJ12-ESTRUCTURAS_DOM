@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+</head>
+<body>
+    <h2>Ejercicio 8</h2>
+    <label for="">Ingrese la temperatura en Celsius:</label>      
+    <input type="text" name="tempEntrada" id="tempEntrada"><br><br> 
+    <input type="button" value="Pasar a Fahrenheit" onClick="fahrenheit()"><br> 
+    <div id="Zona1"></div> 
+    <div id="Zona2"></div>
+
+    <script> 
+        function EscriuData(nomZona, text) { 
+            document.getElementById(nomZona).innerHTML = text;
+        } 
+
+        function fahrenheit() {
+            let temp = document.getElementById("tempEntrada").value;     
+            temp = ((1.8) * temp + 32);     
+            EscriuData('Zona1', temp + " ºF");  // mostrando el resultado de la temperatura por pantalla      
+            FraseRelativa(temp); 
+        }
+
+        function FraseRelativa(temperatura) { 
+            let cadena="-"; 
+            if ((temperatura >= 14) && (temperatura < 32))  
+                cadena ="Temperatura baja"; 
+            if ((temperatura >= 32) && (temperatura < 68))  
+                cadena ="Temperatura adecuada"; 
+            if ((temperatura >= 68) && (temperatura <= 96)) 
+            cadena ="Temperatura alta"; 
+            if (cadena=="-")  
+                cadena = "Temperatura desconocida"; 
+            EscriuData('Zona2', cadena); 
+        } 
+    </script>
+</body>
+</html>

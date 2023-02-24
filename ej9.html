@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+</head>
+<body>
+    <h1>Ejercicio 9</h1>
+    <form>
+        <label for="">Ingrese 10 numeros separados por coma:</label>
+        <input type="text" name="num" id="num"><br>
+        
+        
+        <button onclick="calcular()">Enviar</button>
+    </form>    
+
+    <script>
+        
+        function calcular(){
+            let numero= document.getElementById("num").value;
+            parseInt(numero);
+            let arreglo = numero.split(',');
+
+            document.write("Mostrando los numeros negativos:</br>");
+            for(let i=0; i<arreglo.length; i++){
+                if (arreglo[i]<0) {
+                    document.write(arreglo[i]+ "<br>");
+                }
+                
+            }
+
+            document.write("Mostrando los numeros positivos:</br>");
+            for(let a=0; a<arreglo.length; a++){
+                if (arreglo[a]>=0) {
+                    document.write(arreglo[a]+ "<br>");
+                }
+                
+            }
+
+            document.write("Mostrando los numeros multiplos de 15:</br>");
+            for( i=0; i<arreglo.length; i++){
+                if (arreglo[i]%15==0) {
+                    document.write(arreglo[i]+ "<br>");
+                }
+                
+            }
+
+            let suma=0;
+            document.write("Mostrando el valor acumulado:</br>");
+            for( i=0; i<arreglo.length; i++){
+                if (arreglo[i]%2==0) {
+                    suma=suma+ arreglo[i];
+                    document.write(suma);
+                }
+                
+            }
+                        
+        }
+    </script>
+</body>
+</html>

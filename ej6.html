@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+<body>
+    <h1>Ejercicio 6</h1>
+    <form>
+        <label for="">Seleccione el origen del viaje:</label>
+        <select id="origen">
+            <option value=""></option>
+            <option value="Ciudad de Palma">Ciudad de Palma</option>
+            <option value="otro">Otro</option>
+        </select>
+        <br><br>
+        <label for="">Seleccione el destino del viaje:</label>
+        <select id="destino">
+            <option value=""></option>
+            <option value="La costa del Sol">La costa del Sol</option>
+            <option value="Panchimalco">Panchimalco</option> 
+            <option value="Puerto el Triunfo">Puerto el Triunfo </option>
+        </select>
+        <br><br>
+        <label for="">Ingrese el precio del viaje:</label>
+        <input type="number" name="precio" id="precio"><br><br>
+        
+        <button onclick="calcular()">Enviar</button>
+    </form>    
+
+    <script>
+        
+        function calcular(){
+            let origen= document.getElementById("origen").value;
+            let destino= document.getElementById("destino").value;
+            let precio= document.getElementById("precio").value;
+            let porcent;
+            let desc;
+            let total;
+            
+            if (origen == "Ciudad de Palma") {
+                switch(destino){
+                    case "La costa del Sol": 
+                        porcent=5;
+                        desc= precio * 0.05;
+                        total= precio - desc;
+                        document.write(`<h1>Datos de Compra</h1>
+                        Origen: ${origen}<br>Destino: ${destino}<br> 
+                        Precio inicial: ${precio}<br>
+                        Porcentaje de descuento aplicado: ${porcent}%<br>
+                        Total descuento: ${desc}<br>Total a pagar: ${total}`);
+                        break;
+                    case "Panchimalco": 
+                        porcent=10;
+                        desc= precio * 0.10;
+                        total= precio - desc;
+                        document.write(`<h1>Datos de Compra</h1>
+                        Origen: ${origen}<br>Destino: ${destino}<br> 
+                        Precio inicial: ${precio}<br>
+                        Porcentaje de descuento aplicado: ${porcent}%<br>
+                        Total descuento: ${desc}<br>Total a pagar: ${total}`);
+                        break;
+                    case "Puerto el Triunfo": 
+                        porcent=15;
+                        desc= precio * 0.15;
+                        total= precio - desc;
+                        document.write(`<h1>Datos de Compra</h1>
+                        Origen: ${origen}<br>Destino: ${destino}<br> 
+                        Precio inicial: ${precio}<br>
+                        Porcentaje de descuento aplicado: ${porcent}%<br>
+                        Total descuento: ${desc}<br>Total a pagar: ${total}`);
+                        break;
+                    default:
+                        alert("No has seleccionado un lugar destino");
+                } 
+                
+            } else if (origen == "otro")  {
+                document.write(`<h1>Datos de Compra</h1>
+                        Origen: ${origen}<br>Destino: ${destino}<br> 
+                        Total a pagar: ${precio}`);
+            }else{
+                alert("No has seleccionado un lugar de origen");
+            }            
+            
+        }   
+    </script>
+</body>
+</html>

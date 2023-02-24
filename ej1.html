@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <h1>Ejercicio 1</h1>
+    <form>
+        <label for="">Ingrese su edad:</label><br>
+        <input type="text" name="edad" id="edad"><br><br>
+        
+        <button onclick="calcular()">Enviar</button>
+    </form>    
+
+    <script>
+        
+        function calcular(){
+            let age= document.getElementById("edad");
+            let resultado = age.value >=  18 ? "Eres mayor de edad" : "Eres menor de edad";
+            document.write(resultado);
+        }
+        
+    </script>
+    
+</body>
+</html>

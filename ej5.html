@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <h1>Ejercicio 5</h1>
+    <form>
+        <label for="">Seleccione el modelo del carro:</label>
+        <select id="modelo">
+            <option value="FORD FIESTA">FORD FIESTA</option>
+            <option value="FORD FOCUS">FORD FOCUS</option>
+            <option value="FORD ESCAPE">FORD ESCAPE</option>
+        </select>
+        <br>
+        <label for="">Ingrese el precio del carro:</label>
+        <input type="number" name="precio" id="precio"><br><br>
+        
+        <button onclick="calcular()">Enviar</button>
+    </form>    
+
+    <script>
+        
+        function calcular(){
+            let modelo= document.getElementById("modelo").value;
+            let precio= document.getElementById("precio").value;
+            let porcent;
+            let desc;
+            let total;
+            
+            switch(modelo){
+                case "FORD FIESTA": 
+                    porcent=5;
+                    desc= precio * 0.05;
+                    break;
+                case "FORD FOCUS": 
+                    porcent=10;
+                    desc= precio * 0.10;
+                    break;
+                case "FORD ESCAPE": 
+                    porcent=20;
+                    desc= precio * 0.20;
+                    break;
+                default:
+                    alert("No has seleccionado ningún modelo");
+            }
+            
+            total= precio - desc;
+
+            document.write(`<h1>Datos de Compra</h1>
+                        Modelo de carro: ${modelo}<br>
+                        Precio inicial: ${precio}<br>
+                        Porcentaje de descuento aplicado: ${porcent}%<br>
+                        Total descuento: ${desc}<br>
+                        Total a pagar: ${total}`);   
+                        
+            
+        }    
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h1>Ejercicio 2</h1>
+    <h3>Datos del alumno</h3>
+    <form>
+        <label for="">Ingrese el nombre del alumno:</label><br>
+        <input type="text" name="name" id="name"><br><br>
+        <label for="">Ingrese el número de carnet del alumno:</label><br>
+        <input type="text" name="carnet" id="carnet"><br><br>
+        <label for="">Ingrese la nota del examen:</label><br>
+        <input type="text" name="examen" id="examen"><br><br>
+        <label for="">Ingrese la nota de la tarea:</label><br>
+        <input type="text" name="tarea" id="tarea"><br><br>
+        <label for="">Ingrese la nota de asistencia:</label><br>
+        <input type="text" name="asis" id="asis"><br><br>
+        <label for="">Ingrese la nota de investigación:</label><br>
+        <input type="text" name="inv" id="inv"><br><br>
+        
+        <button onclick="calcular()">Enviar</button>
+    </form>    
+
+    <script>
+        
+        function calcular(){
+            let name= document.getElementById("name").value;
+            let carnet= document.getElementById("carnet").value; 
+            let examen= document.getElementById("examen").value * 0.20;
+            let tarea= document.getElementById("tarea").value * 0.40;
+            let asis= document.getElementById("asis").value * 0.10;
+            let inv= document.getElementById("inv").value * 0.30;
+            
+            let nota_final = examen+tarea+asis+inv;
+            document.write(`<h1>Datos del Alumno</h1>
+                            Nombre: ${name}<br> 
+                            Carnet: ${carnet}<br>
+                            Porcentaje obtenido del examen: ${examen}<br>
+                            Porcentaje obtenido de la tarea: ${tarea}<br>
+                            Porcentaje obtenido de la asistencia: ${asis}<br>
+                            Porcentaje obtenido de la investigación: ${inv}<br>
+                            Nota final: ${nota_final}`);
+            
+        }
+        
+    </script>
+    
+</body>
+</html>

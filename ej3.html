@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <h1>Ejercicio 3</h1>
+    <h3>Datos del Empleado</h3>
+    <form>
+        <label for="">Ingrese el nombre del empleado:</label><br>
+        <input type="text" name="name" id="name"><br><br>
+        <label for="">Ingrese el salario del empleado:</label><br>
+        <input type="number" name="salario" id="salario"><br><br>
+        <label for="">Seleccione la categoría del empleado:</label>
+        <select id="cat">
+            <option value="a">A</option>
+            <option value="b">B</option>
+            <option value="c">C</option>
+            <option value="d">D</option>
+        </select>
+        <br><br>
+        <button onclick="calcular()">Enviar</button>
+    </form>    
+
+    <script>
+        let name= document.getElementById("name");
+        let salario= document.getElementById("salario"); 
+        let cat= document.getElementById("cat");
+        let porcent;
+        let aumento;
+        let salario_final;
+
+        function calcular(){
+            switch(cat.value){
+                case "a": 
+                    porcent=15;
+                    aumento= parseInt(salario.value) * 0.15;
+                    break;
+                case "b": 
+                    porcent=30;
+                    aumento= parseInt(salario.value) * 0.30;
+                    break;
+                case "c": 
+                    porcent=10;
+                    aumento= parseInt(salario.value) * 0.10
+                    break;
+                case "d": 
+                    porcent=20;
+                    aumento= parseInt(salario.value) * 0.20
+                    break;
+                default:
+                alert("No has seleccionado una categoría");
+            }
+            
+            salario_final= parseInt(salario.value) + aumento;
+
+            document.write(`<h1>Datos del Empleado</h1>
+                        Nombre: ${name.value}<br>
+                        Categoría: ${cat.value}<br>
+                        Salario actual: ${salario.value}<br>
+                        Porcentaje de aumento obtenido: ${porcent}%<br>
+                        Aumento de salario obtenido: ${aumento}<br>
+                        Salario final: ${salario_final}`);        
+        }
+        
+    </script>
+</body>
+</html>
